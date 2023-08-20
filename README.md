@@ -1,3 +1,16 @@
+// # Header
+// --logo
+// --nav items
+// # body
+// --search
+// --res container
+// --res card
+// # footer
+// --Copyright
+// --link
+// --Address
+// --Contacts
+
 # Components
 
 - A component is an independent, reusable bit of code which divides the UI into smaller pieces. For example, if we were building the UI of React website using React js we can break its UI into smaller parts
@@ -26,3 +39,9 @@
 - You use props to pass data and values from one component to another to get dynamic and unique outputs.
 - But remember that props only transport data in a one-way flow (only from parent to child components). It is not possible for props to pass data from a child to parent, or to components at the same level.
 - Props is just JS Object.
+
+# Export/Import
+
+- named Export/Import
+- Default Export/Import
+- named export import with { }
