@@ -45,3 +45,10 @@
 - named Export/Import
 - Default Export/Import
 - named export import with { }
+
+# Hooks
+
+    (Normal JS utility function)
+
+- useState() - Super powerful state Variable in React.
+- useEffect() - this will call after render components
