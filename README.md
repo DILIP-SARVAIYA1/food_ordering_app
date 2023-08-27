@@ -50,5 +50,14 @@
 
     (Normal JS utility function)
 
-- useState() - Super powerful state Variable in React.
-- useEffect() - this will call after render components
+- useState() - Super powerful state Variable in React. (When variable updated every time components are rendered)
+- useEffect() - this will call after render components is rendered.
+- Optional chaining.
+
+# ShimmerUI
+
+# Conditional rendering
+
+# Reconciliation
+
+- Reconciliation is the process by which React updates the UI to reflect changes in the component state. The reconciliation algorithm is the set of rules that React uses to determine how to update the UI in the most efficient way possible. React uses a virtual DOM (Document Object Model) to update the UI.

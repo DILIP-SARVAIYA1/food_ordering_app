@@ -1,9 +1,11 @@
 import ResCard from "./ResCard";
 import { useState, useEffect } from "react";
+import ShimmerUi from "./ShimmerUI";
 
 const Body = () => {
   const [nData, setnData] = useState([]);
-  // console.log(nData);
+  const [inputData, setinputData] = useState("");
+  const [filterRestorent, setfilterRestorent] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -14,17 +16,42 @@ const Body = () => {
     );
     const json = await data.json();
     setnData(
-      await json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    // .card.card.gridElements.infoWithStyle.restaurants
+    setfilterRestorent(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
-  return (
+
+  return nData?.length === 0 ? (
+    <ShimmerUi />
+  ) : (
     <div className="body">
       <div id="filter">
+        <input
+          type="text"
+          value={inputData}
+          onChange={(e) => {
+            setinputData(e.target.value);
+          }}
+        />
+        <button
+          className="search-btn"
+          onClick={() => {
+            const filterRes = nData.filter((res) => {
+              return res.info.name
+                .toLowerCase()
+                .includes(inputData.toLocaleLowerCase());
+            });
+            setfilterRestorent(filterRes);
+          }}
+        >
+          Search
+        </button>
         <button
           className="filter-btn"
           onClick={() => {
-            const filterList = nData.filter((x) => x.info.avgRating > 4);
+            const filterList = nData?.filter((x) => x?.info?.avgRating > 4);
             setnData(filterList);
           }}
         >
@@ -32,8 +59,8 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {nData.map((x) => (
-          <ResCard key={x.info.id} resData={x} />
+        {filterRestorent?.map((x) => (
+          <ResCard key={x?.info?.id} resData={x} />
         ))}
       </div>
     </div>
