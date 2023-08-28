@@ -29,7 +29,9 @@ const Body = () => {
     <div className="body">
       <div id="filter">
         <input
+          className="input"
           type="text"
+          placeholder="Search Text Hear"
           value={inputData}
           onChange={(e) => {
             setinputData(e.target.value);
@@ -52,7 +54,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filterList = nData?.filter((x) => x?.info?.avgRating > 4);
-            setnData(filterList);
+            setfilterRestorent(filterList);
           }}
         >
           Top rated rasturant

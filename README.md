@@ -61,3 +61,16 @@
 # Reconciliation
 
 - Reconciliation is the process by which React updates the UI to reflect changes in the component state. The reconciliation algorithm is the set of rules that React uses to determine how to update the UI in the most efficient way possible. React uses a virtual DOM (Document Object Model) to update the UI.
+
+# useEffect
+
+    - take callback function and second arguments as dependency array
+    - with only callback function useEffect call every render
+    - with empty dependency array useEffect call initial render
+    - with data inside dependency array useEffect call when dependency changes
+
+# React Router DOM (Library)
+
+    - Install command  = npm i react-router-dom
+    - Import with named import {createBrowserRouter,RouterProvider} from "react-router-dom"
+    -
