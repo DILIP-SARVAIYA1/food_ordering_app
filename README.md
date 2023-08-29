@@ -72,5 +72,11 @@
 # React Router DOM (Library)
 
     - Install command  = npm i react-router-dom
-    - Import with named import {createBrowserRouter,RouterProvider} from "react-router-dom"
-    -
+    - Import with named import {createBrowserRouter,RouterProvider} from "react-router-dom" (path:"/",element:<Component/>)
+    - errorElement:<ErrorComponent /> - for own customizable error page
+    - { useRouterError } Hooks for getting more control on error data return(Object)
+    - create children route children:[pass object] - { Outlet } import Outlet Components
+    - There are two types of routing
+        - Client Side Routing - (only components will interchange)
+        - Server Side Routing - (make a network call and refresh the page)
+    - use {Link} components instead of anchor tag - (use [to = 'path'] instead of href attributes)

@@ -7,7 +7,11 @@ const ResCard = (Props) => {
   // console.log(resData.info);
   return (
     <div className="res-card">
-      <img src={CARD_IMG + cloudinaryImageId} alt="res-img" />
+      <img
+        className="res-img"
+        src={CARD_IMG + cloudinaryImageId}
+        alt="res-img"
+      />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h4>{avgRating} Star</h4>
