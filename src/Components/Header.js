@@ -6,28 +6,28 @@ const Header = () => {
   const [login, setLogin] = useState("Log In");
 
   return (
-    <div className="header">
+    <div className="flex items-center justify-between shadow-lg bg-gray-100">
       <div className="logo-container">
         <a href="http://localhost:1234/">
-          <img className="app-logo" src={IMG_LOGO} alt="logo" />
+          <img className="w-20" src={IMG_LOGO} alt="logo" />
         </a>
       </div>
       <div className="nav-items">
-        <ul>
-          <li>
+        <ul className="flex ">
+          <li className="px-4">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="px-4">
             <Link>Cart</Link>
           </li>
           <button
-            className="log_btn"
+            className="px-6"
             onClick={() => {
               login === "Log In" ? setLogin("Log Out") : setLogin("Log In");
             }}

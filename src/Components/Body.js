@@ -1,6 +1,7 @@
 import ResCard from "./ResCard";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [nData, setnData] = useState([]);
@@ -26,10 +27,10 @@ const Body = () => {
   return nData?.length === 0 ? (
     <ShimmerUi />
   ) : (
-    <div className="body">
+    <div className="p-4">
       <div id="filter">
         <input
-          className="input"
+          className="mb-4 p-1 text-sm mr-4 border-solid border-black border-[1px]"
           type="text"
           placeholder="Search Text Hear"
           value={inputData}
@@ -38,7 +39,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="border-solid border-black border-[1px] mx-4 px-4 py-1 bg-slate-600 text-red-50"
           onClick={() => {
             const filterRes = nData.filter((res) => {
               return res.info.name
@@ -51,7 +52,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="filter-btn"
+          className="border-solid border-black border-[1px] mx-4 px-4 py-1 bg-green-500 hover:bg-green-700 "
           onClick={() => {
             const filterList = nData?.filter((x) => x?.info?.avgRating > 4);
             setfilterRestorent(filterList);
@@ -60,9 +61,11 @@ const Body = () => {
           Top rated rasturant
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap justify-between gap-5">
         {filterRestorent?.map((x) => (
-          <ResCard key={x?.info?.id} resData={x} />
+          <Link to={"res/" + x?.info?.id} key={x?.info?.id}>
+            <ResCard resData={x} />
+          </Link>
         ))}
       </div>
     </div>

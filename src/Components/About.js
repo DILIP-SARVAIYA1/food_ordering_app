@@ -1,7 +1,9 @@
+import AboutClass from "./AboutClass";
+
 const About = () => {
   return (
     <div>
-      <h1>this is about section</h1>
+      <AboutClass Name="Dilip Sarvaiya" City="Somnath" Mobile="8154810034" />
     </div>
   );
 };

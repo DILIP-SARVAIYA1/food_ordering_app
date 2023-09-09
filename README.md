@@ -64,19 +64,78 @@
 
 # useEffect
 
-    - take callback function and second arguments as dependency array
-    - with only callback function useEffect call every render
-    - with empty dependency array useEffect call initial render
-    - with data inside dependency array useEffect call when dependency changes
+- take callback function and second arguments as dependency array
+- with only callback function useEffect call every render
+- with empty dependency array useEffect call initial render
+- with data inside dependency array useEffect call when dependency changes
 
 # React Router DOM (Library)
 
-    - Install command  = npm i react-router-dom
-    - Import with named import {createBrowserRouter,RouterProvider} from "react-router-dom" (path:"/",element:<Component/>)
-    - errorElement:<ErrorComponent /> - for own customizable error page
-    - { useRouterError } Hooks for getting more control on error data return(Object)
-    - create children route children:[pass object] - { Outlet } import Outlet Components
-    - There are two types of routing
-        - Client Side Routing - (only components will interchange)
-        - Server Side Routing - (make a network call and refresh the page)
-    - use {Link} components instead of anchor tag - (use [to = 'path'] instead of href attributes)
+- Install command = npm i react-router-dom
+- Import with named import {createBrowserRouter,RouterProvider} from "react-router-dom" (path:"/",element:<Component/>)
+- errorElement:<ErrorComponent /> - for own customizable error page
+- { useRouterError } Hooks for getting more control on error data return(Object)
+- create children route children:[pass object] - { Outlet } import Outlet Components
+- There are two types of routing
+  - Client Side Routing - (only components will interchange)
+  - Server Side Routing - (make a network call and refresh the page)
+- use {Link} components instead of anchor tag - (use [to = 'path'] instead of href attributes)
+
+# Dynamic Routes
+
+    - path:"/restaurant/:id = : mean this path is Dynamic
+    - {useParam} Hooks for Dynamic Routing
+
+# Class based components
+
+- class [name of class] extends React.Components {
+  constructor(props){
+  super(props);
+  this.state = { - for creating state variable
+  }
+  }
+
+       componentDidMount () {
+            - is used for API call - like useEffect(cbf)
+
+  }
+  render(){
+  return(JSX)
+  }
+  }
+
+- Life cycle of class based components
+
+  - fist constructor will be called then render method will be called and then componentDidMount will be called
+  - when multiple child components have React will batch the render method and execute then batch the componentDidMount batch and execute
+
+  === Mounting ===
+  _ Constructor called
+  _ Render (dummy data) - <HTML dummy data>
+  _ ComponentDidMount called - <API call> - <this.setState> -> state variable is updated
+  === Update ===
+  _ render(API data) \* <HTML new data>
+  === componentDidUpdate ===
+  === componentWillUnmount ===
+
+# Custom Hooks
+
+- Return in variable not destructuring 🤣
+- Hooks are just normal utility functions
+
+# Optimizing App
+
+- Chunking
+- Code Spiting
+- Dynamic Bundling
+- Lazy loading
+- On demand loading
+- Dynamic import
+  - lazy import from react as named { import }
+  - Suspense = imported from react as named import { Suspense }
+- Syntax = const name_of_variable = lazy(()=> import('path of components'));
+  - Suspense = for gap time fill <Suspense fallback="JSX">imported Components</Suspense>
+
+# Tailwind CSS
+
+- Go to Tailwind Website 😊
