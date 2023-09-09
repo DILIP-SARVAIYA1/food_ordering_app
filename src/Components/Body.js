@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard, { withPromotedLabel } from "./ResCard";
 import { useState, useEffect } from "react";
 import ShimmerUi from "./ShimmerUI";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ const Body = () => {
   const [nData, setnData] = useState([]);
   const [inputData, setinputData] = useState("");
   const [filterRestorent, setfilterRestorent] = useState("");
+  const ResCardPromoted = withPromotedLabel(ResCard);
 
   useEffect(() => {
     fetchData();
@@ -62,9 +63,14 @@ const Body = () => {
         </button>
       </div>
       <div className="flex flex-wrap justify-between gap-5">
+        {console.log(filterRestorent)}
         {filterRestorent?.map((x) => (
           <Link to={"res/" + x?.info?.id} key={x?.info?.id}>
-            <ResCard resData={x} />
+            {x.info.promoted ? (
+              <ResCardPromoted resData={x} />
+            ) : (
+              <ResCard resData={x} />
+            )}
           </Link>
         ))}
       </div>

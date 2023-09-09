@@ -139,3 +139,8 @@
 # Tailwind CSS
 
 - Go to Tailwind Website 😊
+
+# Higher Order Components
+
+- Basically its tack a components ans return a components with added some futures
+- At the end of the day its just javascript functions
